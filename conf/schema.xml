@@ -136,7 +136,6 @@
    <copyField source="stage_list" dest="keyword" />
    <copyField source="task_list" dest="keyword" />
    <copyField source="category" dest="keyword" />
-   <copyField source="college_facet" dest="keyword" />
 
   </fields>
 

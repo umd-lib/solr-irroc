@@ -111,7 +111,7 @@
 
    <!-- college and college facet same content -->
    <field name="college" type="umd_dont_tokenize" indexed="true" stored="true"/>
-   <field name="college_facet" type="umd_dont_tokenize" indexed="true" stored="true"/>
+   <field name="college_display" type="umd_dont_tokenize" indexed="true" stored="true"/>
 
    <!-- meta_description is keyword-like content --> 
    <field name="meta_description" type="umd_default" indexed="false" stored="true" multiValued="true"/>

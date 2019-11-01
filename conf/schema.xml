@@ -97,6 +97,7 @@
       trailing underscores (e.g. _version_) are reserved.
    -->
    <field name="_version_" type="long" indexed="true" stored="true"/>
+   <field name="_text_" type="text_general" indexed="true" stored="false" multiValued="true"/>
    <field name="id" type="umd_dont_tokenize" indexed="true" stored="true" required="true"/>
  
    <!-- str_resource is functioning as the item title -->
@@ -965,7 +966,7 @@
     <fieldType name="umd_default" class="solr.TextField" positionIncrementGap="100">
       <analyzer type="index">
         <tokenizer class="solr.StandardTokenizerFactory"/>
-        <filter class="solr.StandardFilterFactory"/>
+        <!-- <filter class="solr.StandardFilterFactory"/> -->
         <filter class="solr.LowerCaseFilterFactory"/>
         <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_en.txt" />
         <filter class="solr.ASCIIFoldingFilterFactory"/>
@@ -973,7 +974,7 @@
       </analyzer>
       <analyzer type="query">
         <tokenizer class="solr.StandardTokenizerFactory"/>
-        <filter class="solr.StandardFilterFactory"/>
+        <!-- <filter class="solr.StandardFilterFactory"/> -->
         <filter class="solr.LowerCaseFilterFactory"/>
         <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_en.txt" />
         <filter class="solr.ASCIIFoldingFilterFactory"/>
@@ -1045,8 +1046,7 @@
       </analyzer>
     </fieldType>
 
-    <fieldType name="umdDate" class="edu.umd.lib.UmdDateField" omitNorms="true" precisionStep="6"
-  positionIncrementGap="0" /> 
+    <fieldType name="umdDate" class="edu.umd.lib.UmdDateField" omitNorms="true" precisionStep="6" positionIncrementGap="0" />
 
  </types>
   

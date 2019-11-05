@@ -37,7 +37,7 @@ ADD data.csv /tmp/data.csv
 # Load the data to irroc core
 RUN /opt/solr/bin/solr start && sleep 3 && \
     curl 'http://localhost:8983/solr/irroc/update?commit=true' -H 'Content-Type: text/xml' --data-binary '<delete><query>*:*</query></delete>' && \
-    curl 'http://localhost:8983/solr/irroc/update/csv?commit=true&f.meta_description.split=true&f.stage_list.split=true&f.task_list.split=true&f.stage_list_facet.split=true&f.task_list_facet.split=true' \
+    curl 'http://localhost:8983/solr/irroc/update/csv?commit=true&f.meta_description.split=true&f.stage_list.split=true&f.stage_list.separator=;&f.task_list.split=true&f.task_list.separator=;&f.stage_list_facet.split=true&f.stage_list_facet.separator=;&f.task_list_facet.split=true&f.task_list_facet.separator=;' \
         --data-binary @/tmp/data.csv -H 'Content-type:application/csv'&& \
     /opt/solr/bin/solr stop
 # For deceasing the size of the image
